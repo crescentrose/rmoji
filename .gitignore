@@ -1,0 +1,9 @@
+data/emoji-test.txt
+
+
+#Added by cargo
+#
+#already existing elements are commented out
+
+/target
+**/*.rs.bk

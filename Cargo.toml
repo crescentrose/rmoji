@@ -1,0 +1,8 @@
+[package]
+name = "emoji"
+version = "0.1.0"
+authors = ["Ivan Oštrić <ivan@halcyon.hr>"]
+edition = "2018"
+
+[dependencies]
+regex = "1"
