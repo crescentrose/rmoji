@@ -30,3 +30,7 @@ implemented yet.
 - [ ] Readline integration (?): Bind a key to input an emoji on the command line
   (similar to macOS Cmd-Ctrl-Space)
 - [ ] Vim integration: Use a command to pick an emoji and input it to the editor
+
+## License
+
+3-clause BSD (read the file LICENSE.md for more details).
