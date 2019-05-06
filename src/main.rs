@@ -1,18 +1,17 @@
 extern crate regex;
 
-use std::env;
+mod parser;
+mod errors;
+
 use std::fs;
 use std::io::BufReader;
+use errors::*;
 
-mod parser;
-
-fn main() -> Result<(), std::io::Error>{
-    let _args: Vec<String> = env::args().collect();
-
+fn run() -> Result<(), errors::RmojiError> {
     const DATA_FILENAME: &str = "data/emoji-test.txt";
     let data_file = match fs::File::open(DATA_FILENAME) {
         Ok(file) => file,
-        Err(e) => return Err(e)
+        Err(_e) => return Err(RmojiError::new("unreadable data file"))
     };
 
     let reader = BufReader::new(data_file);
@@ -23,5 +22,13 @@ fn main() -> Result<(), std::io::Error>{
     }
 
     Ok(())
+}
+
+fn main() {
+    if let Err(e) = run() {
+        println!("error: {}", e);
+
+        std::process::exit(1)
+    }
 }
 
